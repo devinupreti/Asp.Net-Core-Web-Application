@@ -2,6 +2,8 @@
 Web Application based on MVC design pattern  
 Developed for Course -> CSE 686 : Internet Programming under guidance of Prof. Jim Fawcett
 
+Note : This web application uses Entity Framework Code First Approach
+
 ## Objective
 Personal Portfolio web application providing authorization for Admin and Recruiters
 
@@ -10,7 +12,7 @@ Delete the existing SQL database
 add-migration "FirstMigrationName"  
 update-database  
 
-## Requirements
+## Requirements for Course
 1. Website with two sections: a public static section using HTML5, CSS3, and ES6, and a password protected section using Asp.Net Core MVC.  
 2. Contents are academic and professional information, portfolio projects, statement of interests, career preferences, including photos, diagrams, code samples, and any other information that may be relevant.  
 3. The site provides the ability to accept comments, notes, and requests from recruiters that are authenticated by the site.  
