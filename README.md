@@ -7,6 +7,8 @@ Note : This web application uses Entity Framework Code First Approach
 ## Objective
 Personal Portfolio web application providing authorization for Admin and Recruiters
 
+![alt text](https://github.com/devinupreti/Asp.Net-Core-Web-Application/blob/master/web_app_images/home.PNG)
+
 ## Build Instructions
 Delete the existing SQL database  
 add-migration "FirstMigrationName"  
@@ -20,3 +22,8 @@ update-database
 5. Contents are partitioned into topic blocks, each of which may have text, diagrams, photos, and commentary.  
 6. The site provides and a webservice built using Asp.Net Web API with the ability to upload, edit, and delete projects, resumes, and topic-blocks.  
 7. Clients for WebService.  
+
+## Snapshots
+![alt text](https://github.com/devinupreti/Asp.Net-Core-Web-Application/blob/master/web_app_images/education.PNG)
+![alt text](https://github.com/devinupreti/Asp.Net-Core-Web-Application/blob/master/web_app_images/professional.PNG)
+![alt text](https://github.com/devinupreti/Asp.Net-Core-Web-Application/blob/master/web_app_images/resume.PNG)
