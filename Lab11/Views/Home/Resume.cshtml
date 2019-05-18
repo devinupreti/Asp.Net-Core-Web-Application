@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>Resume Upload/Download!</h3>
+@section Scripts
+    {
+    <script src="@Url.Content("../js/resumes.js")"></script>
+}
+
+<div id="resumeHolder">
+</div>
+<br>
+<button class="linkb" onclick="refresh()">Refresh Files</button>
+<br><br><br>
+
+<form action="http://localhost:57584/api/Files" enctype="multipart/form-data" method="post" target="_blank">
+    <fieldset>
+        <legend>Upload file</legend>
+        <br>
+        <input type="file" name="file" id="file">
+        <input type="submit" value="Upload">
+        <br>
+    </fieldset>
+</form>

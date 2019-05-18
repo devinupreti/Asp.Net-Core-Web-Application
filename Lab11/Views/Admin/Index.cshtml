@@ -1,0 +1,31 @@
+﻿@model Lab11.Models.Note
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>Welcome @User.Identity.Name!</h3>
+<p>This is your dashboard, you can use this to see your requests and notes</p>
+
+<br>
+
+<div class="area">
+    <h4>View Notes</h4>
+    <p>
+        To view notes created by recruiters clink on the link below
+    </p>
+    <br>
+    <a asp-controller="Admin" asp-action="Notes">Notes</a>
+</div>
+
+<br>
+
+<div class="area">
+    <h4>View Requests</h4>
+    <p>
+        To view requests made by recruiters clink on the link below
+    </p>
+    <br>
+    <a asp-controller="Admin" asp-action="Requests">Requests</a>
+</div>

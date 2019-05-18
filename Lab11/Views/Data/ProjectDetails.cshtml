@@ -1,0 +1,30 @@
+﻿@model Lab11.Models.Project
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h1>Project Details</h1>
+
+<div>
+    <h4>Project</h4>
+    <hr />
+    <ul>
+        <li>
+            <strong>Job Title :</strong> @Html.DisplayFor(model => model.ProjectName)
+        </li>
+        <li>
+            <strong>Year :</strong> @Html.DisplayFor(model => model.Year)
+        </li>
+        <li>
+            <strong>Technology :</strong> @Html.DisplayFor(model => model.Technology)
+        </li>
+        <li>
+            <strong>Description :</strong> @Html.DisplayFor(model => model.Description)
+        </li>
+    </ul>
+</div>
+<br>
+<div>
+    <a asp-action="Projects">Back to all Projects</a>
+</div>

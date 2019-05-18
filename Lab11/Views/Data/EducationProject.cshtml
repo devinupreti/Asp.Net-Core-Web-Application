@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Lab11.Models.Project>
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+@if (Model.Count() > 0)
+{
+<h3>List of Projects</h3>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProjectName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Technology)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            @if (User.IsInRole("Admin"))
+            {
+            <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var project in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => project.ProjectName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => project.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => project.Technology)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => project.Description)
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+            <td>
+                <a asp-action="DeleteProject" asp-route-id="@project.ProjectId">Delete Project</a> |
+                <a asp-action="EditProject" asp-route-id="@project.ProjectId">Edit Project</a>
+            </td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+}
+else
+{
+<br>
+<h3>There are no projects for this Education!!</h3>
+}
+<br>
+<div>
+    <a asp-action="Educations">Back to Education</a>
+</div>
+

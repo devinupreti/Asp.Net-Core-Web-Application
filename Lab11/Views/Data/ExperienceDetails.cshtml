@@ -1,0 +1,33 @@
+﻿@model Lab11.Models.Experience
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h1>Experience Details</h1>
+
+<div>
+    <h4>Experience</h4>
+    <hr />
+    <ul>
+        <li>
+            <strong>Job Title :</strong> @Html.DisplayFor(model => model.JobTitle)
+        </li>
+        <li>
+            <strong>Location :</strong> @Html.DisplayFor(model => model.Location)
+        </li>
+        <li>
+            <strong>Start Date :</strong> @Html.DisplayFor(model => model.StartDate)
+        </li>
+        <li>
+            <strong>End Date :</strong> @Html.DisplayFor(model => model.EndDate)
+        </li>
+        <li>
+            <strong>Description :</strong> @Html.DisplayFor(model => model.Description)
+        </li>
+    </ul>
+</div>
+<br>
+<div>
+    <a asp-action="Experiences">Back to all Experiences</a>
+</div>

@@ -1,0 +1,195 @@
+﻿html {
+    font-size: 15px;
+}
+
+p {
+    font-size: 1.125rem;
+}
+
+body {
+    font-family: Tahoma;
+    background-color: #FFFAF0;
+}
+
+.area {
+    width: 600px;
+    height: 200px;
+    border-style: solid;
+    padding-left:10px;
+}
+
+/* Style table body content */
+table {
+    table-layout: fixed;
+    width: 90%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #F8F8FF;
+    color: black;
+    font-family: Rockwell;
+
+}
+
+td {
+    height: 50px;
+}
+
+th {
+background-color: black; /*header color*/
+color: white;
+height: 30px;
+}
+
+.row {
+    display: block;
+}
+
+.control-label {
+    display: block;
+    height: 25px;
+}
+
+.form-control {
+    display: block;
+    width: 300px;
+    height: 20px;
+}
+
+.form-control-big {
+    display: block;
+    width: 600px;
+    height: 20px;
+}
+
+
+/* Style page content */
+.container {
+    margin-left: 160px; /* Important : Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+.dp {
+    margin-top: 27px;
+}
+
+/* for the entire navigation bar
+    - width should be a percentage for responsiveness 
+    - height should be px
+*/
+nav {
+    width: auto;
+    height: 38px;
+    margin-left: 160px; /* to be consistent with */
+    background-color: #DCDCDC; /* color of navigation bar */
+    overflow: hidden;
+}
+
+.button-link {
+    display: block;
+    float: left;
+    font-family: Helvetica;
+    font-size: 15px;
+    color: black;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+    background-color: #DCDCDC;
+    border-color: #DCDCDC;
+    border-style: solid;
+    background: transparent;
+}
+
+/* for a specific tab in the nav bar */
+nav a {
+    display: block;
+    float: left;
+    font-family: Helvetica;
+    font-size: 15px;
+    color: black;
+    padding-top: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.button-link:hover {
+    background-color: #F5F5F5;
+}
+
+/* when hover over a tab -> change color */
+nav a:hover {
+    background-color: #F5F5F5;
+}
+
+#logo {
+    /*font*/
+    font-family: 'Hind', Helvetica;
+    background-color: #FFFAF0;
+    font-size: 30px;
+    letter-spacing: -2px;
+    text-shadow: 1px 1px 2px #c4c4c4;
+    /*box*/
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 5px;
+    margin-top: -20px;
+}
+
+#logo:hover {
+    background-color: #F5F5DC;
+}
+
+#dashboardLink {
+    background-color: #E6E6FA;
+}
+
+#dashboardLink:hover {
+    background-color: #F5F5F5;
+}
+
+.nav-account {
+    background-color: #F5F5DC;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #DCDCDC;
+    font-family: Helvetica;
+    color: black;
+    text-align: center;
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+    text-align:center;
+}
+
+/* The navigation menu links */
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    color: #818181;
+    display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+

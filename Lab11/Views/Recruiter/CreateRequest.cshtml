@@ -1,0 +1,41 @@
+﻿@model Lab11.Models.Request
+
+@{
+  Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>Create Request</h3>
+
+<hr />
+<div class="row">
+  <div class="col-md-4">
+      <form asp-action="CreateRequest">
+          <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+          <div class="form-group">
+              <label asp-for="RequestName" class="control-label"></label>
+              <input asp-for="RequestName" class="form-control" />
+              <span asp-validation-for="RequestName" class="text-danger"></span>
+          </div>
+          <br>
+          <div class="form-group">
+              <label asp-for="RequestContent" class="control-label"></label>
+              <input asp-for="RequestContent" class="form-control-big" />
+              <span asp-validation-for="RequestContent" class="text-danger"></span>
+          </div>
+          <br>
+          <div class="form-group">
+              <input type="submit" value="Create" class="btn btn-primary" />
+          </div>
+      </form>
+  </div>
+</div>
+
+<hr />
+<br>
+<div>
+  <a asp-action="Index">Back to Dashboard</a>
+</div>
+
+@section Scripts {
+  @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

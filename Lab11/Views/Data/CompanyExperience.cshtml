@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Lab11.Models.Experience>
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+@if (Model.Count() > 0)
+{
+<h3>List of Experiences</h3>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            @if (User.IsInRole("Admin"))
+            {
+                <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var experience in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => experience.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => experience.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => experience.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => experience.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => experience.Description)
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+            <td>
+                <a asp-action="DeleteExperience" asp-route-id="@experience.ExperienceId">Delete Experience</a> |
+                <a asp-action="EditExperience" asp-route-id="@experience.ExperienceId">Edit Experience</a>
+            </td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+
+}
+else
+{
+<br>
+<h3>There are no experiences for this Company yet!!</h3>
+}
+<br>
+<div>
+    <a asp-action="Companies">Back to Companies</a>
+</div>
+

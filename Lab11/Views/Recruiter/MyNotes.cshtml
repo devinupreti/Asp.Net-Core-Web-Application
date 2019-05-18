@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Lab11.Models.Note>
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>List of Notes</h3>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NoteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoteContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecruiterName)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var note in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => note.NoteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => note.NoteContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => note.RecruiterName)
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

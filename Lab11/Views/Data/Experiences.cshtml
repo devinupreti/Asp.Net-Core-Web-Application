@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Lab11.Models.Experience>
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>List of Experiences</h3>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JobTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                
+            </th>
+            @if (User.IsInRole("Admin"))
+            {
+                <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var experience in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => experience.JobTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => experience.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => experience.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => experience.EndDate)
+            </td>
+            <td>
+                <a asp-action="ExperienceDetails" asp-route-id="@experience.ExperienceId">Details</a>
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+            <td>
+                <a asp-action="DeleteExperience" asp-route-id="@experience.ExperienceId">Delete Experience</a> |
+                <a asp-action="EditExperience" asp-route-id="@experience.ExperienceId">Edit Experience</a> 
+                
+            </td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+

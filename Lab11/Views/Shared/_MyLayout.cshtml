@@ -1,0 +1,77 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project | Devin</title>
+    <link rel="stylesheet" href="~/css/myStyle.css?id=1" />
+</head>
+<body>
+    <header>
+        <nav>
+            <a id="logo" href="#">Devin Upreti</a>
+
+            @if (this.User.IsInRole("User"))
+            {
+                <a id="dashboardLink" asp-area="" asp-controller="Recruiter" asp-action="Index">Recruiter Dashboard</a>
+            }
+
+            @if (this.User.IsInRole("Admin"))
+            {
+                <a id="dashboardLink" asp-area="" asp-controller="Admin" asp-action="Index">Admin Dashboard</a>
+            }
+
+            <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            <a asp-area="" asp-controller="Data" asp-action="Index">Data </a>
+            <a asp-area="" asp-controller="Home" asp-action="Resume">Resume </a>
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy </a>
+
+
+            @if (SignInManager.IsSignedIn(User))
+    {
+        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+        <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+            <button type="submit" class="button-link">Logout</button>
+        </form>
+}
+else
+{
+        <a asp-area="Identity" asp-page="/Account/Register">Register</a>
+        <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+}
+
+        </nav>
+    </header>
+
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <img class="dp" src="~/files/dp2.jpg" alt="face" width="160" height="200">
+        <a asp-area="" asp-controller="Home" asp-action="About">About Me</a>
+        <a asp-area="" asp-controller="Home" asp-action="Personal">Personal Info</a>
+        <a asp-area="" asp-controller="Home" asp-action="Professional">Professional Info</a>
+        <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+        <a href="https://github.com/devinupreti"><img src="~/files/github.png" alt="github" width="30" height="30"></a>
+        <a href="https://www.linkedin.com/in/devinupreti/"><img src="~/files/linkedin.png" alt="linkedin" width="30" height="30"></a>
+    </div>
+
+
+    <div class="container">
+        <partial name="_CookieConsentPartial" />
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            &copy; Devin Upreti - 2019
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

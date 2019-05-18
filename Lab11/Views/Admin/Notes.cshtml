@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Lab11.Models.Note>
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>List of Notes</h3>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NoteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NoteContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecruiterName)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var note in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => note.NoteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => note.NoteContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => note.RecruiterName)
+            </td>
+            <td>
+                <a asp-action="DeleteNote" asp-route-id="@note.NoteId">Delete Note</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

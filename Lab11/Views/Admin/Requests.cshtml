@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Lab11.Models.Request>
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>List of Requests</h3>
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestContent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RecruiterName)
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var req in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => req.RequestName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => req.RequestContent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => req.RecruiterName)
+            </td>
+            <td>
+                <a asp-action="DeleteRequest" asp-route-id="@req.RequestId">Delete Request</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+

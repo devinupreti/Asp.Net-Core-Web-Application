@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Lab11.Models.Education>
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>List of Educations</h3>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        <a asp-action="CreateEducation">Create New Education</a>
+    </p>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InstituteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Degree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+            </th>
+            @if (User.IsInRole("Admin"))
+            {
+             <th></th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var education in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => education.InstituteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => education.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => education.Degree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => education.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => education.EndDate)
+            </td>
+            <td>
+                <a asp-action="EducationProject" asp-route-id="@education.EducationId">View Projects</a>
+            </td>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    <a asp-action="DeleteEducation" asp-route-id="@education.EducationId">Delete Education</a> |
+                    <a asp-action="EditEducation" asp-route-id="@education.EducationId">Edit Education</a> |
+                    <a asp-action="AddProject" asp-route-id="@education.EducationId">Add Project</a>
+                </td>
+            }
+        </tr>
+        }
+    </tbody>
+</table>
+

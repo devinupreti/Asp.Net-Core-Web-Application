@@ -1,0 +1,35 @@
+﻿@model Lab11.Models.Note
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>Welcome @User.Identity.Name!</h3>
+<p>This is your dashboard, you can use this to make requests and notes</p>
+
+<br>
+
+<div class="area">
+    <h4>Create Note</h4>
+    <p>
+        You can create notes here, which the admin will be able to access. The notes have title and content.
+        Use notes as a medium to pass messages to the admin. I will get back to you soon!
+    </p>
+    <br>
+    <a style="padding-right: 25px;" asp-controller="Recruiter" asp-action="CreateNote">Create New Note</a>
+    <a asp-controller="Recruiter" asp-action="MyNotes">View Notes</a>
+</div>
+
+<br>
+
+<div class="area">
+    <h4>Make Request</h4>
+    <p>
+        You can make requests here, which the admin will be able to see. The requests are like notes and are composed of title and content.
+        Use requests to schedule interview calls with the admin.
+    </p>
+    <br>
+    <a style="padding-right: 25px;" asp-controller="Recruiter" asp-action="CreateRequest">Create New Request</a>
+    <a asp-controller="Recruiter" asp-action="MyRequests">View Requests</a>
+</div>

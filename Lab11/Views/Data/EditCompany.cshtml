@@ -1,0 +1,42 @@
+﻿@model Lab11.Models.Company
+
+@{
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+<h3>Edit Company</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditCompany">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CompanyId" />
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label"></label>
+                <input asp-for="CompanyName" class="form-control" />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <label asp-for="Headquarters" class="control-label"></label>
+                <input asp-for="Headquarters" class="form-control" />
+                <span asp-validation-for="Headquarters" class="text-danger"></span>
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<br>
+<div>
+    <a asp-action="Companies">Back to Companies</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
